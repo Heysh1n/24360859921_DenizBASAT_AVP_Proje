@@ -37,17 +37,17 @@ static char *gezegenleri[GEZEGEN_SAYISI] = {
 
 static void baslikGoster(void) {
     printf("\n");
-    printf("-- -- -- -- -- -- -- -- -- -- -- -- -- --\n");
+    printf("-- -- -- -- -- -- -- -- -- -- --\n");
     printf("  UZAY FIZIK SIMULASYONU\n");
     printf("  Gunes Sistemi Gezegenleri\n");
-    printf("  -- -- -- -- -- -- -- -- -- --\n");
+    printf("-- -- -- -- -- -- -- -- -- --\n");
     printf("\n");
 }
 
 static void menuGoster(void) {
-    printf("-- -- -- -- -- -- -- -- -- -- --\n");
+    printf("-- -- -- -- -- -- --\n");
     printf("  DENEY MENUSU\n");
-    printf("  -- -- -- -- -- --\n");
+    printf("-- -- -- -- -- -- -- \n");
     printf("\n");
     printf("  [1] Serbest Dusme       |   h = 0.5*g*t^2\n");
     printf("  [2] Yukari Atis         |   h = v0^2 / 2g\n");
@@ -76,4 +76,4 @@ static void cikisMesaji(const char *isim) {
     printf("\n");
 }
 
-#endif
+#endif /* config.h */

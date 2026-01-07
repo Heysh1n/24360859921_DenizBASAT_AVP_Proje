@@ -243,6 +243,25 @@ static void ipGerilmesi(double *g_ptr, char **isim_ptr, int n) {
     tabloSonu();
 }
 
+//  Güvenli sayı girişi - hatalı girişte -9999 döner
+static void bufferTemizle(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+static int guvenliSayiAl(void) {
+    int sayi;
+    int sonuc;
+    
+    sonuc = scanf("%d", &sayi);
+    
+    /* scanf başarısız olduysa (harf, sembol vs.) */
+    if (sonuc != 1) {
+        bufferTemizle();
+        return -9999;  /* Hata kodu */
+    }
+    
+    return sayi;
+}
 // Experiment 9: Elevator Physics
 // Calculates apparent weight in an accelerating elevator: N = m × (g ± a)
 static void asansor(double *g_ptr, char **isim_ptr, int n) {
@@ -280,4 +299,4 @@ static void asansor(double *g_ptr, char **isim_ptr, int n) {
     tabloSonu();
 }
 
-#endif
+#endif /* UTILS_H */

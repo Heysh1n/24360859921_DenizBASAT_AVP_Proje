@@ -4,15 +4,13 @@
 /* Importlar */
 #include "src/config.h"
 #include "src/utils.h"
- 
 
-// ANA FONKSİYON
 int main(void) {
-    // Değişken tanımları
+    
     char bilim_insani[MAX_ISIM_UZUNLUK];
     int secim;
-    double *g_ptr;      /* Yerçekimi dizisi pointer'ı */
-    char **isim_ptr;    /* Gezegen isimleri pointer'ı */
+    double *g_ptr;
+    char **isim_ptr;
     
     baslikGoster();
     
@@ -22,23 +20,16 @@ int main(void) {
     
     hosgeldinMesaji(bilim_insani);
     
-    /*
-     * Dizilerin başlangıç adreslerini pointer'lara ata
-     * Bu pointer'lar deney fonksiyonlarına parametre olarak geçirilecek
-     */
     g_ptr = yercekim;
     isim_ptr = gezegenleri;
     
-// ANA PROHRAM
+    /* ANA PROGRAM DÖNGÜSÜ */
     do {
-        /* Menüyü göster */
         menuGoster();
         
-        /* Kullanıcı seçimini al */
         printf("  Seciminiz: >> ");
-        scanf("%d", &secim);
+        secim = guvenliSayiAl();  /* <-- Güvenli giriş */
         
-        /* Seçime göre ilgili deneyi çalıştır */
         switch (secim) {
             
             case 0:
@@ -78,12 +69,15 @@ int main(void) {
                 break;
                 
             case -1:
-                /* Çıkış */
                 cikisMesaji(bilim_insani);
                 break;
                 
+            case -9999:
+                /* Hatalı giriş (harf, sembol vs.) */
+                printf("\n  [!] Hatali giris! Sayi giriniz.\n\n");
+                break;
+                
             default:
-                /* Geçersiz seçim */
                 printf("\n  [!] Gecersiz secim! 0-8 arasi veya -1 girin.\n\n");
                 break;
         }
