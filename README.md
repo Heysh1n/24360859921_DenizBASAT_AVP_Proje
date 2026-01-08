@@ -71,7 +71,7 @@ Projeyi yerel ortamınızda çalıştırmak için GCC derleyicisine ihtiyacını
 **1. Projeyi Klonlayın:**
 
 ```bash
-git clone [https://github.com/Heysh1n/24360859921_DenizBASAT_AVP_Proje.git](https://github.com/Heysh1n/24360859921_DenizBASAT_AVP_Proje.git)
+git clone https://github.com/Heysh1n/24360859921_DenizBASAT_AVP_Proje.git
 
 ```
 
@@ -96,3 +96,4 @@ gcc main.c -o dist/main -lm
 
 * Bu proje **Bursa Teknik Üniversitesi** akademik dürüstlük ilkelerine uygun olarak bireysel hazırlanmıştır.
 * Kodların izinsiz kopyalanması veya başka projelerde aynen kullanılması yasaktır.
+
